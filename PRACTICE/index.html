@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO MY VVY</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            flex-direction: column;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+            background-color: red;
+            position: relative;
+            transform: rotate(-45deg);
+            animation: pulse 1s infinite;
+            cursor: pointer;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: 50px;
+
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.1) rotate(-45deg); }
+            100% { transform: scale(1) rotate(-45deg); }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            opacity: 0;
+            transform: scale(0);
+            transition: transform 2s ease-in-out, opacity 2s ease-in-out;
+        }
+
+        .stem {
+            width: 10px;
+            height: 0;
+            left: 15px;
+            top: 20px;
+            background-color: green;
+            transition: height 2s ease-in-out;
+            position: relative;
+            
+            
+        }
+        .stem1 {
+            width: 10px;
+            height: 0;
+            left: 70px;
+            background-color: green;
+            transition: height 2s ease-in-out;
+            position: relative;
+            
+        }
+        .stem2 {
+            width: 10px;
+            height: 0;
+            left: 150px;
+            background-color: green;
+            transition: height 2s ease-in-out;
+            position: relative;
+            
+        }
+        
+
+        .flower {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            width: 50px;
+            margin-top: 50px;
+            height: 50px;
+            margin-top: -80px;
+        }
+
+        .petal {
+            width: 60px;
+            height: 60px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+
+        }
+
+        .petal:nth-child(1) { top: -30px; left: 0; }
+        .petal:nth-child(2) { top: 30px; left: 0; }
+        .petal:nth-child(3) { left: -40px; top: 0; }
+        .petal:nth-child(4) { left: 40px; top: 0; }
+        
+
+        .center {
+            width: 30px;
+            height: 30px;
+            right: 5px;
+            background-color: yellow;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .img1{
+            display: flex;
+            position: absolute;
+            width: 70px;
+            right: 290px;
+            bottom: 250px;
+            height: 0;
+            transform: scale(0);
+            transition: transform 2s ease-in-out;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .img2{
+            display: flex;
+            position: absolute;
+            width: 70px;
+            right: 5px;
+            top: 5px;
+            height: 0;
+            transform: scale(0);
+            transition: transform 2s ease-in-out;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .cat{
+            display: flex;
+            position: absolute;
+            width: 120px;
+            right: 200px;
+            top: 150px;
+            border-radius: 30px;
+            box-shadow: 0px 4px 10px rgb(107, 6, 39);
+            height: 0;
+            transform: scale(0);
+            transition: transform 2s ease-in-out;
+            vertical-align: middle;
+            display: inline-block;
+        }
+        .hrt{
+            display: flex;
+            position: absolute;
+            width: 200px;
+            left: 200px;
+            top: 150px;
+            height: 0;
+            transform: scale(0);
+            transition: transform 2s ease-in-out;
+            vertical-align: middle;
+            display: inline-block;
+        }
+    
+        
+        .letter {
+            background: rgb(255, 151, 179);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: justify;
+            width: 70%;
+            align-items: center;
+            word-spacing: 4px;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            box-shadow: 0px 4px 10px rgb(201, 22, 70);
+            transform: scale(0);
+            transition: transform 2s ease-in-out;
+        }
+        .letter h1{
+            align-items: center;
+        }
+        .show .container {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .show .stem {
+            height: 150px;
+            margin-top: 40px;
+            border-radius: 10px;
+            rotate: -50deg;
+            
+        }
+        .show .stem1 {
+            height: 150px;
+            margin-top: 40px;
+            border-radius: 10px;
+            rotate: 15deg;
+        }
+
+        .show .stem2 {
+            height: 230px;
+            margin-top: 40px;
+            border-radius: 10px;
+            rotate: 65deg;
+        }
+
+        .show .flower {
+            transform: scale(1);
+            margin-left: 50px;
+            margin-right: 50px;
+        }
+
+        .show .letter {
+            transform: scale(1);
+        }
+        .show .img1 {
+            transform: scale(1);
+            height: 70px;
+        }
+        .show .img2 {
+            transform: scale(1);
+            height: 70px;
+        }
+        .show .cat {
+            transform: scale(1);
+            height: 120px;
+        }
+        .show .hrt {
+            transform: scale(1);
+            height: 200px;
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <div class="heart" onclick="growFlower(); playMusic();"></div>
+    
+    <div class="container">
+        <div class="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        
+        <div class="stem"></div>
+        <div class="stem1"></div>
+        <div class="stem2"></div>
+        
+        <div class="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+        <div class="flower">
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="petal"></div>
+            <div class="center"></div>
+        </div>
+    </div>
+    <img src="200w.gif" alt="" class="cat">
+    <img src="heart.gif" alt="" class="hrt">
+        <div class="letter">
+            <img src="love.png" alt="" class="img1">
+            <img src="better-health.png" alt="" class="img2">
+            <h1>Happy Valentine's Day BB!</h1>
+            <p> Hello vy, this may not be a true flower or a physical flower but I hope you will accept it AHHAHAH. Sorry ga ug wakoy pang palit nimo anang in ana, 
+                but even though wala ga just remember, that I will always be here with you and loving you no matter what. AHAHHA sag bati ng buwak naa diha ga dawata please heheheh you know me naman very witty ug huna huna, nya 
+                kahuna huna mn ko ani nga idea nya cute mn ahhaha mawto ako gibuhat dzzuuuhh.
+                anyways B kibaw ko dha ko nagkuwang pero mo bawi lang kos ACT OF SERVICE HEHEHE, kutob sa naa pako b diko mo hunong nga mo uban ug mo tabang nimo (BISAG LAHI NANA IMO KAUBAN HAAHHA). Btaw B maybe soon bawi rako PUHON!
+                Don't forget bb that I will always love you even with my last breath. I LOVE YOU SO MUCH BB, YOU ARE MY EVERYTHING, AND I WILL LOVE YOU UNTIL THE END OF TIME HAPPYYY VALENTINEESS NANAMARN B.
+            </p>
+        </div>
+    
+    <audio id="bg-music" loop>
+        <source src="blue (instrumental).mp3">
+    </audio>
+    <script>
+        function growFlower() {
+            document.body.classList.add('show');
+
+            document.querySelector('.heart').style.display = 'none';
+        }
+        function playMusic() {
+        document.getElementById("bg-music").play();
+    }
+    </script>
+</body>
+</html>
